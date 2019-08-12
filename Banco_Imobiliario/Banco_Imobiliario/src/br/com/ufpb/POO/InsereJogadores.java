@@ -35,13 +35,12 @@ public class InsereJogadores {
 	/**Método para realizar a inserção de jogadores ao jogo*/
 
 	public void inserirJogador() {
-		iniciarCores();
 		String printCores = "";
 		CasaDoTabuleiro pontoDePartida = this.listas.getTabuleiro().get(0);
 		System.out.print("Digite o número de jogadores [2-8]: ");
 		int n = Integer.parseInt(this.scan.nextLine());
 		if (n>1 && n<9){
-
+			iniciarCores();
 			for(int k = 0; k < n;) {
 				for(String cor: this.cores) {
 					printCores += "["+cor+"]";
