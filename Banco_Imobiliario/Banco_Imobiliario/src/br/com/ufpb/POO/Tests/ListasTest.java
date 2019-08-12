@@ -1,8 +1,5 @@
 package br.com.ufpb.POO.Tests;
 
-/**Classe de testes dos métodos da classe Listas
-*/
-
 import static org.junit.Assert.*;
 
 import org.junit.Test;
@@ -16,8 +13,6 @@ import br.com.ufpb.POO.Propriedades.PropriedadeComercializavel;
 import br.com.ufpb.POO.Propriedades.PropriedadeComercializavelImovel;
 
 public class ListasTest {
-
-    /**Teste do método addJogador()*/    
 
 	@Test
 	public void testAddJogador() {
@@ -33,8 +28,6 @@ public class ListasTest {
 		assertEquals(lista.getJogadores().get(1),jogador2);
 		assertEquals(2,lista.getJogadores().size());
     }
-
-    /**Teste do método addListaDeJogadoresNaCasaDePartida()*/
 
 	@Test
 	public void testAddListaDeJogadoresNaCasaDePartida(){
@@ -62,8 +55,6 @@ public class ListasTest {
 		assertEquals(3,lista.getTabuleiro().get(0).getJogadoresNaCasa().size());
 		
 	}
-
-    /**Teste do método getJogadorId()*/
 	
 	@Test
 	public void testGetJogadorId(){

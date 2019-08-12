@@ -1,8 +1,5 @@
 package br.com.ufpb.POO.Tests;
 
-/**Classe de Testes dos Métodos da classe CasaDoTabuleiro
-*/
-
 import static org.junit.Assert.*;
 
 import org.junit.Test;
@@ -13,9 +10,6 @@ import br.com.ufpb.POO.Tabuleiro;
 import br.com.ufpb.POO.Propriedades.CasaDoTabuleiro;
 
 public class CasaDoTabuleiroTest {
-
-    /**Teste do método mover()
-    */
 
 	@Test
 	public void testMover() {

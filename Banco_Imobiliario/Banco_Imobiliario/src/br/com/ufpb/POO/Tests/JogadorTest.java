@@ -1,8 +1,5 @@
 package br.com.ufpb.POO.Tests;
 
-/**Classe de testes dos métodos da classe Jogador
-*/
-
 import static org.junit.Assert.*;
 
 import java.util.ConcurrentModificationException;
@@ -17,16 +14,13 @@ import br.com.ufpb.POO.Propriedades.PropriedadeComercializavelImovel;
 import br.com.ufpb.POO.*;
 public class JogadorTest {
 
-    /**Teste do método getPos()*/	
-
+	
 	@Test
 	public void testGetPos() {
 		CasaDoTabuleiro casa = new PropriedadeComercializavelImovel("Leblon", "lilás",100,6,30,90,270,400,500,50,0,1);
 		Jogador jogador = new Jogador("Ismar", "Azul", casa, 1500);
         assertEquals(casa,jogador.getPos());
     }
-
-    /**Teste do método comprar()*/
 	
 	@Test
 	public void testComprar(){
@@ -39,8 +33,6 @@ public class JogadorTest {
 		assertTrue(jogador.getMinhasPropriedades().contains(propriedade));
 		assertTrue(jogador.getSaldo()==1500-propriedade.getValor());	
 	}
-
-    /**Teste do método setMinhasPropriedades()*/
 	
 	@Test(expected=ConcurrentModificationException.class)
 	public void testSetMinhasPropriedades(){
@@ -57,8 +49,7 @@ public class JogadorTest {
 		assertFalse(jogador.getMinhasPropriedades().contains(lilas));
 		assertFalse(jogador.getMinhasPropriedades().contains(lilas3));
 	}
-
-    /**Teste do método toStatus()*/
+	
 	@Test
 	
 	public void testToStatus(){

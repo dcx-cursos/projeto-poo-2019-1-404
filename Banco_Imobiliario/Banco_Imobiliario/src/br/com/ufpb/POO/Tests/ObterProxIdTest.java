@@ -1,7 +1,5 @@
 package br.com.ufpb.POO.Tests;
 
-/**Classe de testes dos métodos da classe obterProxId*/
-
 import static org.junit.Assert.*;
 
 import org.junit.Test;
@@ -21,8 +19,6 @@ public class ObterProxIdTest {
 	Jogador jogador2 = new Jogador("Ismar", "Azul", lista.getTabuleiro().get(6), 1500);
 	Jogador jogador3 = new Jogador("Josué", "Vermelho", lista.getTabuleiro().get(1), 1500);
 	
-    /**Teste do método obterProxCasa()*/    
-
 	@Test
 	public void testObterIdProxCasa() {
 		lista.addJogador(jogador);
@@ -41,9 +37,6 @@ public class ObterProxIdTest {
 		int proxId4 = obterProxId.obterIdProxCasa(jogador.getPos().getIndice(),10,jogador);
 		assertEquals(0,proxId4);	
 	}
-
-    /**Teste do método obterProxJogador()*/
-
 	@Test
 	public void testObterProxJogador() {
 		lista.addJogadorJogando(jogador);
