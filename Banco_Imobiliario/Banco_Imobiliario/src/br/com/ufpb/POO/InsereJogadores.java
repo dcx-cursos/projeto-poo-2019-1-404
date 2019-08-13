@@ -1,7 +1,6 @@
 package br.com.ufpb.POO;
 
 /**Classe para objetos do tipo InsereJogadores, onde serão contidos, valores e métodos para o mesmo.
- *@author Anderson, Ismar, Jobson, Josué
  */
 
 import java.util.ArrayList;
