@@ -40,7 +40,8 @@ public class InsereJogadores {
 		System.out.print("Digite o número de jogadores [2-8]: ");
 		int n = Integer.parseInt(this.scan.nextLine());
 		if (n>1 && n<9){
-			iniciarCores();
+		    iniciarCores();
+
 			for(int k = 0; k < n;) {
 				for(String cor: this.cores) {
 					printCores += "["+cor+"]";
