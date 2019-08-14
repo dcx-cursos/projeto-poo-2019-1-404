@@ -1,0 +1,10 @@
+Link para o relatório do Projeto, este que até o momento está em fase de desenvolvimento,
+onde estará pronto até o dia 12/08/2019 até 23:59. 
+drive.google.com/open?id=1uiDs0dMRSMCJdNsJmRmIzuCS9tpwB_mgRPHofVYciJY
+
+Instruções após o download: 
+1 - descompacte a pasta Banco_Imobiliario, que está dentro da pasta projeto-poo-2019-1-404-master.zip, para uma pasta de sua escolha;
+2 - Abra o Eclipse e crie um novo workspace;
+3 - Com o novo workspace aberto vá até a aba File e selecione Open Projects from File System;
+4 - Selecione Directory e vá até a pasta onde você descompactou a pasta Banco_Imobiliario, abra a pasta e encontrará as pastas: UML e Banco_Imobiliario, selecione Banco_Imobiliario e abra;
+5 - Agora clique em Finish e pronto, basta ir no package br.com.ufpb.POO e executar a classe Teste.java para testa o Jogo.
