@@ -19,9 +19,7 @@ public class CasaDoTabuleiroTest {
 		lista.addJogador(jogador1);
 		lista.addListaDeJogadoresNaCasaDePartida();
 		jogador1.getPos().mover(jogador1, lista.getTabuleiro().get(7));
-		//Passo 1
 		assertTrue(lista.getTabuleiro().get(7).getJogadoresNaCasa().get(0)==jogador1);
-		//Passo 2
 		assertFalse(lista.getTabuleiro().get(0).getJogadoresNaCasa().contains(jogador1));
 	}
 
