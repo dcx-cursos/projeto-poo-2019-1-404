@@ -9,6 +9,7 @@ import java.util.Scanner;
 import java.util.Random;
 
 import br.com.ufpb.POO.Propriedades.CasaDoTabuleiro;
+import br.com.ufpb.POO.Verificadores.VerificadoresDojogo;
 
 public class ControlesTabuleiro {
 	private Tabuleiro tabuleiro;
@@ -18,6 +19,8 @@ public class ControlesTabuleiro {
 	private InsereJogadores insereJogadores;
 	private ObterProxId obterProxId;
 	private Scanner scan;
+	private Dados dados = new Dados();
+	private VerificadoresDojogo verificador = new VerificadoresDojogo();
 	
 	public ControlesTabuleiro() {
 		this.listas = new Listas();
@@ -64,19 +67,26 @@ public class ControlesTabuleiro {
 //			int novoId = this.jogadorDaVez.getId();
 //			this.jogadorDaVez = this.listas.getJogadorId(this.obterProxId.obterIdProxJogador(novoId, jogadores));
 //		}
-	}
+		}
 
 	/**Método para realizar o "lançamento" dos dados*/
 	
 	public void jogarDados() {
-		Random gera = new Random();
-		int a = gera.nextInt(6)+1;
-		int b = gera.nextInt(6)+1;
-		int resultado = a+b;
-		int indiceCasaDestino = this.obterProxId.obterIdProxCasa(this.jogadorDaVez.getIdAtualDoJogador(), resultado, this.jogadorDaVez);
-		System.out.println("O jogador "+this.jogadorDaVez.getNome()+" ("+this.jogadorDaVez.getCorPeao()+") tirou "+a+","+b+" o peão avançou para "+indiceCasaDestino+" - "+this.listas.getTabuleiro().get(indiceCasaDestino).getNome());
+		dados.lancarDados();
+		int indiceCasaDestino = this.obterProxId.obterIdProxCasa(this.jogadorDaVez.getIdAtualDoJogador(), dados.resultado(), this.jogadorDaVez);
+		System.out.println("O jogador "+this.jogadorDaVez.getNome()+" ("+this.jogadorDaVez.getCorPeao()+") tirou "+dados.getDado1()+","+dados.getDado2()+
+		" o peão avançou para "+indiceCasaDestino+" - "+this.listas.getTabuleiro().get(indiceCasaDestino).getNome());
 		moverJogador(jogadorDaVez, this.listas.getCasaById(indiceCasaDestino));
 		this.listas.getCasaById(indiceCasaDestino).funcaoTabuleiro(jogadorDaVez);
+		/*
+		if (qtdJogadasSeguidas >= 3) {
+			System.out.println("O jogador jogou 3 vezes seguidas, o jogador ser� preso por trapacear");
+		}
+		if(dados.dado1 == dados.dado2) {
+			qtdJogadasSeguidas += 1;
+			jogarDados();
+		}
+		*/
 	}
 
 	/**Método para verificar se o Jogador realmente deseja sair*/
