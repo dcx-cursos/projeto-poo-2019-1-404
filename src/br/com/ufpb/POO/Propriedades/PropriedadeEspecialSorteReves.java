@@ -4,13 +4,15 @@ package br.com.ufpb.POO.Propriedades;
 import java.util.ArrayList;
 
 import br.com.ufpb.POO.Jogador;
+import br.com.ufpb.POO.Listas;
 
 public class PropriedadeEspecialSorteReves extends PropriedadeEspecial {
-	private ArrayList<Integer> cartas;
+	private Listas lista;
 	
 	//Construtor
-	public PropriedadeEspecialSorteReves(String nome, int indice) {
+	public PropriedadeEspecialSorteReves(String nome, int indice, Listas lista) {
 		super(nome, indice);
+		this.lista = lista;
 	}
 	
 	/** AINDA SERÁ IMPLEMENTADO
