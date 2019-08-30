@@ -1,7 +1,6 @@
 package br.com.ufpb.POO.Propriedades;
 /** Classe para objetos do tipo PropriedadeEspecialSorteReves
  */
-import java.util.ArrayList;
 
 import br.com.ufpb.POO.Jogador;
 import br.com.ufpb.POO.Listas;
@@ -20,6 +19,9 @@ public class PropriedadeEspecialSorteReves extends PropriedadeEspecial {
 	 */
 	public void funcaoTabuleiro(Jogador jogador) {
 //		System.out.print("Sorte ou Revés, "+jogador.getNome()+" nada acontece!\n");
-		System.out.println(""+this.getNome()+": função tabuleiro ok!");
+		System.out.println(this.lista.getDeck().getLista().get(this.lista.getDeck().getLista().size() - 1).funcaoCarta(jogador, lista));
+		this.lista.getDeck().desinfileirar();
+
 	}
+	
 }
