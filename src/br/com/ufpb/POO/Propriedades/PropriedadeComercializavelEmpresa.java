@@ -40,7 +40,7 @@ public class PropriedadeComercializavelEmpresa extends PropriedadeComercializave
 				System.out.println(""+this.getProprietario().getNome()+" recebe $"+this.getTaxa());
 				System.out.println("Seu novo saldo é: $"+jogador.getSaldo());
 			} else {
-				System.out.print("A propriedade já é sua!");
+				System.out.print("A propriedade já é sua!\n");
 			}
 		}
 	}
