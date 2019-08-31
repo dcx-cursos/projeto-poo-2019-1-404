@@ -7,7 +7,12 @@ public abstract class SorteRevesAbs {
 	
 	private int numberCard;
 
-	public String funcaoCarta(Jogador jogadorDaVez, Listas lista)
+	public String funcaoCarta(Jogador jogadorDaVez)
+	{
+		return "";
+	}
+	
+	public String funcaoCarta(Listas lista)
 	{
 		return "";
 	}
