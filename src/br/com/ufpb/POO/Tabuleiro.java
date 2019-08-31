@@ -60,7 +60,7 @@ public class Tabuleiro {
 		tabuleiro.add(new PropriedadeEspecialSorteReves("Sorte ou Reves", 27, this.listas));																//POSICAO 27
 		tabuleiro.add(new PropriedadeComercializavelImovel("Av. Paulista", "amarelo", 140, 10, 50, 150, 450, 625, 750, 100, 0, 28));					//POSICAO 28
 		tabuleiro.add(new PropriedadeComercializavelImovel("Jardim Europa", "amarelo", 140, 12, 60, 180, 500, 700, 900, 100, 0, 29));					//POSICAO 29
-		tabuleiro.add(new PropriedadeEspecialVaParaAPrisao("Va Para A Prisao", 30));														//POSICAO 30
+		tabuleiro.add(new PropriedadeEspecialVaParaAPrisao("Va Para A Prisao", 30, this.listas));														//POSICAO 30
 		tabuleiro.add(new PropriedadeComercializavelImovel("Copacabana", "verde", 260, 22, 110, 330, 800, 975, 1150, 150, 0, 31));					//POSICAO 31
 		tabuleiro.add(new PropriedadeComercializavelEmpresa("Companhia De Aviacao", "", 200, 0, 0, 0, 0, 0, 0, 0, 50, 32));						//POSICAO 32
 		tabuleiro.add(new PropriedadeComercializavelImovel("Av. Vieira Souto", "verde", 320, 28, 150, 450, 1000, 1200, 1400, 200, 0, 33));			//POSICAO 33
