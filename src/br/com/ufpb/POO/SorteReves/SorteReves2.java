@@ -10,7 +10,7 @@ public class SorteReves2 extends SorteRevesAbs {
 		setNumber(2);
 	}
 	
-	public String funcaoCarta(Jogador jogadorDaVez, Listas lista)
+	public String funcaoCarta(Listas lista)
 	{
 		for(Jogador jogador: lista.getJogadores())
 		{
