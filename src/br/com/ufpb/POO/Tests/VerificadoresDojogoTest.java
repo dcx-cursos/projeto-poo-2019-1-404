@@ -89,10 +89,10 @@ public class VerificadoresDojogoTest {
 	}
 	@Test
 	public void testNomeisValido() {
-		assertTrue(verificador.nomeIsValido("Josu�",listas.getJogadores()));
+		assertTrue(verificador.nomeIsValido("Josué",listas.getJogadores()));
 		assertFalse(verificador.nomeIsValido(" ",listas.getJogadores()));
 		listas.addJogador(jogador);
-		assertFalse(verificador.nomeIsValido("Josu�",listas.getJogadores()));
+		assertFalse(verificador.nomeIsValido("Josué",listas.getJogadores()));
 	}
 	@Test
 	public void testComandoIsValido() {
