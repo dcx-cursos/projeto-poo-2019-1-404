@@ -32,6 +32,10 @@ public class InsereJogadores {
 		cores.add("rosa");
 	}
 	
+	public ArrayList<String> getCores(){
+		return this.cores;
+	}
+	
 	/**Método para realizar a inserção de jogadores ao jogo*/
 
 	public void inserirJogador() {
