@@ -5,11 +5,12 @@ package br.com.ufpb.POO.Propriedades;
 import java.util.Scanner;
 
 import br.com.ufpb.POO.Jogador;
+import br.com.ufpb.POO.Verificadores.VerificadoresDojogo;
 
 public class PropriedadeComercializavelImovel extends PropriedadeComercializavel {
 	
 	private Scanner scan;
-	
+	private VerificadoresDojogo verificador = new VerificadoresDojogo();
 	//Construtor
 	public PropriedadeComercializavelImovel(String nome, String cor_regiao, int valor, int taxa, int taxa1, int taxa2, int taxa3,
 			int taxa4, int valorHotel, int valorCasa, int mult, int id) {
@@ -27,8 +28,12 @@ public class PropriedadeComercializavelImovel extends PropriedadeComercializavel
 			System.out.print("Você deseja comprar "+this.getNome()+" (Sim/Não)? ");
 			String resposta = this.scan.nextLine().toUpperCase();
 			if(resposta.equals("S") || resposta.equals("SIM")) {
+				if(verificador.podeComprar(jogador, this)) {
 				jogador.comprar(this);
 				System.out.println("Seu novo saldo é: $"+jogador.getSaldo());
+				}else if(!verificador.podeComprar(jogador, this)) {
+					System.out.println("Saldo insuficiente");
+				}
 			}
 		}
 		
@@ -44,5 +49,4 @@ public class PropriedadeComercializavelImovel extends PropriedadeComercializavel
 			}
 		}
 	}
-	
 }
