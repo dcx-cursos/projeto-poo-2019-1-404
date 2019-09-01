@@ -25,9 +25,11 @@ public class ObterProxIdTest {
 		lista = new Listas();
 		tabuleiro = new Tabuleiro(lista);
 		jogador1 = new Jogador("Anderson", "Preto",lista.getTabuleiro().get(0),1500);
+		jogador1.setId(0);
 		jogador2 = new Jogador("Ismar", "Azul", lista.getTabuleiro().get(6), 1500);
+		jogador2.setId(1);
 		jogador3 = new Jogador("Josué", "Vermelho", lista.getTabuleiro().get(1), 1500);
-		
+		jogador3.setId(2);
 	}
 	@Test
 	public void testObterIdProxCasa() {
@@ -53,6 +55,10 @@ public class ObterProxIdTest {
 		lista.addJogadorJogando(jogador2);
 		lista.addJogadorJogando(jogador3);
 		//Passo 1
+		System.out.println(lista.getJogadoresJogando().size());
+		System.out.println(jogador1.getId());
+		System.out.println(jogador1.getId());
+		System.out.println(jogador1.getId());
 		assertEquals(1,obterProxId.obterIdProxJogador(jogador1.getId(), lista.getJogadoresJogando()));
 		assertEquals(2,obterProxId.obterIdProxJogador(jogador2.getId(), lista.getJogadoresJogando()));
 		assertEquals(0,obterProxId.obterIdProxJogador(jogador3.getId(), lista.getJogadoresJogando()));
