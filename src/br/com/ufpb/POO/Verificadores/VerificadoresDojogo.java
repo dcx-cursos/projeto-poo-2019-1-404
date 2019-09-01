@@ -18,7 +18,7 @@ public class VerificadoresDojogo {
 	
 	//Método responsavel por verificar se o jogador possui saldo necessario para comprar uma propriedade comercializavel
 	public boolean podeComprar(Jogador jogador, PropriedadeComercializavel propriedade) {
-		if(propriedade.getValor()<jogador.getSaldo()) {
+		if(propriedade.getValor()>jogador.getSaldo()) {
 			return false;
 		}
 		return true;
