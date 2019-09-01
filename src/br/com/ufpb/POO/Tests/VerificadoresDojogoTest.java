@@ -44,14 +44,30 @@ public class VerificadoresDojogoTest {
 		assertTrue(verificador.possuiSaldo(jogador));
 	}
 	
+	
+	
+	
+	/*Teste responsavel por verificar o comportamento do metodo "PodeComprar".
+	 * No primeiro caso espera-se um retorno false pelo fato do jogador  possuir saldo inferior ao valor da propriedade.
+	 * No segundo caso espera-se um retorno true pelo fato do jogador ter um saldo maior que o valor da propriedade.
+	 * No terceiro caso espera-se um retorno true pelo fato do jogador possuir um saldo igual a zero, sendo assim incapaz de realizar a compra.
+	*/
 	@Test
 	public void testPodeComprar() {
 		jogador.setSaldo(10);
-		assertTrue(verificador.podeComprar(jogador, propriedades));
+		assertFalse(verificador.podeComprar(jogador, propriedades));
 		jogador.setSaldo(1000);
+		assertTrue(verificador.podeComprar(jogador, propriedades));
+		jogador.setSaldo(0);
 		assertFalse(verificador.podeComprar(jogador, propriedades));
 	}
 	
+	
+	
+	
+	/*Teste responsavel por verificar o comportamento do metodo "Lancar Dados".
+	 * No caso espera-se um retorno true pelo fato do resultado dos dados ser >= 1 ou <=12
+	*/
 	@Test
 	public void testResultadoDosDados() {
 		dados.lancarDados();
