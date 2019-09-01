@@ -19,6 +19,9 @@ public class Jogador implements IJogador{
     private int id;
     private int idAtualJogador;
     private ArrayList<PropriedadeComercializavel> minhasPropriedades;
+    private boolean estaPreso;
+    private boolean temHabeas;
+    private boolean usouHabeas;
 
     public Jogador(String nome, String cor_peao, CasaDoTabuleiro posicao, int saldo) {
         this.nome = nome;
@@ -28,6 +31,9 @@ public class Jogador implements IJogador{
         this.id = ultimoId++;
         this.idAtualJogador = 0;
         this.minhasPropriedades = new ArrayList<PropriedadeComercializavel>();
+        this.estaPreso = false;
+        this.temHabeas = false;
+        this.usouHabeas = false;
     }
     
     /**Método para retorno do nome do Jogador
@@ -177,6 +183,36 @@ public class Jogador implements IJogador{
     
     public int getQuantPropriedades() {
     	return this.minhasPropriedades.size();
+    }
+    
+    public boolean getEstaPreso()
+    {
+    	return this.estaPreso;
+    }
+    
+    public void setEstaPreso(boolean condition)
+    {
+    	this.estaPreso = condition;
+    }
+    
+    public boolean getTemHabeas()
+    {
+    	return this.temHabeas;
+    }
+    
+    public void setTemHabeas(boolean condition)
+    {
+    	this.temHabeas = condition;
+    }
+    
+    public boolean getUsouHabeas()
+    {
+    	return this.usouHabeas;
+    }
+    
+    public void setUsouHabeas(boolean condition)
+    {
+    	this.usouHabeas = condition;
     }
 
     /**Método para retornar uma String contendo o status(informações) do Jogador

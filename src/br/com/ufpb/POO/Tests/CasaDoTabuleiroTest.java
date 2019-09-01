@@ -2,6 +2,7 @@ package br.com.ufpb.POO.Tests;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import br.com.ufpb.POO.Jogador;
@@ -10,12 +11,17 @@ import br.com.ufpb.POO.Tabuleiro;
 import br.com.ufpb.POO.Propriedades.CasaDoTabuleiro;
 
 public class CasaDoTabuleiroTest {
-
+	public Listas lista;
+	public Tabuleiro tabuleiro;
+	public Jogador jogador1;
+	@Before
+	public void  iniciaObjetos() {
+		lista = new Listas();
+		tabuleiro = new Tabuleiro(lista);
+		jogador1 = new Jogador("Ismar", "Azul",lista.getTabuleiro().get(0),1500);		
+	}
 	@Test
 	public void testMover() {
-		Listas lista = new Listas();
-		Tabuleiro tabuleiro = new Tabuleiro(lista);
-		Jogador jogador1 = new Jogador("Ismar", "Azul",lista.getTabuleiro().get(0),1500);
 		lista.addJogador(jogador1);
 		lista.addListaDeJogadoresNaCasaDePartida();
 		jogador1.getPos().mover(jogador1, lista.getTabuleiro().get(7));

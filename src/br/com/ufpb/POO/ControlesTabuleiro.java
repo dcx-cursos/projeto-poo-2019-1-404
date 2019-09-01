@@ -42,6 +42,7 @@ public class ControlesTabuleiro {
 	
 	public void iniciaJogadorDaVez() {
 		this.jogadorDaVez = this.listas.getPrimeiroJogador();
+		System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 		System.out.println("O Banco Imobiliário vai começar. Aproveite!");
 		options(this.jogadorDaVez);
 	}
@@ -80,7 +81,7 @@ public class ControlesTabuleiro {
 		this.listas.getCasaById(indiceCasaDestino).funcaoTabuleiro(jogadorDaVez);
 		/*
 		if (qtdJogadasSeguidas >= 3) {
-			System.out.println("O jogador jogou 3 vezes seguidas, o jogador ser� preso por trapacear");
+			System.out.println("O jogador jogou 3 vezes seguidas, o jogador ser� preso por trapacear");
 		}
 		if(dados.dado1 == dados.dado2) {
 			qtdJogadasSeguidas += 1;
@@ -107,6 +108,7 @@ public class ControlesTabuleiro {
 	
 	public void options(Jogador jogadorDaVez) {
 		if(this.listas.getJogadoresJogando().size()>1){
+			System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 			System.out.print("A jogada de "+jogadorDaVez.getNome()+" ("+jogadorDaVez.getCorPeao()+") começou.\n");
 			System.out.println("Comandos disponíveis: [jogar][status][sair]");
 			System.out.print("Entre com um comando: ");

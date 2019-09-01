@@ -7,18 +7,21 @@ package br.com.ufpb.POO;
 import java.util.ArrayList;
 
 import br.com.ufpb.POO.Propriedades.CasaDoTabuleiro;
+import br.com.ufpb.POO.SorteReves.PilhaCartas;
 
 public class Listas {
     private ArrayList<Jogador> jogadores;
     private ArrayList<Jogador> jogadoresJogando;
     private ArrayList<Jogador> jogadoresPresos;
     private ArrayList<CasaDoTabuleiro> tabuleiro;
+    private PilhaCartas deck;
 
     public Listas() {
     	this.jogadores = new ArrayList<Jogador>();
     	this.jogadoresJogando = new ArrayList<Jogador>();
     	this.tabuleiro = new ArrayList<CasaDoTabuleiro>();
     	this.jogadoresPresos = new ArrayList<Jogador>();
+    	this.deck = new PilhaCartas();
     }
     
     /**Método para adicionar jogadores a lista de Jogadores
@@ -146,6 +149,11 @@ public class Listas {
     
 	public void setTabuleiro(ArrayList<CasaDoTabuleiro> tabuleiro) {
 		this.tabuleiro = tabuleiro;
+	}
+	
+	public PilhaCartas getDeck()
+	{
+		return this.deck;
 	}
 }
 
