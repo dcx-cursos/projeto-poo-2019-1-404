@@ -17,7 +17,7 @@ public class PropriedadeEspecialVaParaAPrisao extends PropriedadeEspecial {
 		this.scan = new Scanner(System.in);
 	}
 	
-	/** AINDA SERÁ IMPLEMENTADO
+	/** AINDA SERÃ� IMPLEMENTADO
 	 * @param jogador Jogador 
 	 */
 	public void funcaoTabuleiro(Jogador jogador) {
@@ -25,9 +25,9 @@ public class PropriedadeEspecialVaParaAPrisao extends PropriedadeEspecial {
 		mover(jogador, prisao);
 		lista.addJogadorPreso(jogador);
 		System.out.print(""+jogador.getNome()+" está preso!\n");
-		System.out.println("Utilizar: [Habeas Corpus] [Fiança] *Fiança custa R$50");
+		System.out.println("Utilizar: [HABEAS CORPUS] [FIANCA] *Fiança custa R$50");
 		String escolha = this.scan.nextLine().toUpperCase();
-		if(escolha.equals("Habeas Corpus"))
+		if(escolha.equals("HABEAS CORPUS"))
 		{
 			if(jogador.getTemHabeas())
 			{
@@ -43,18 +43,18 @@ public class PropriedadeEspecialVaParaAPrisao extends PropriedadeEspecial {
 			}
 			else
 			{
-				System.out.println(""+jogador.getNome()+" você não possui o Habeas Corpus, tente novamente.");
+				System.out.println(""+jogador.getNome()+" vocÃª nÃ£o possui o Habeas Corpus, tente novamente.");
 				funcaoTabuleiro(jogador);
 			}
 		}
-		if(escolha.equals("Fiança"))
+		if(escolha.equals("FIANCA"))
 		{
 			jogador.pagarTaxa(50);
 			System.out.println(""+jogador.getNome()+" está livre!\n");
 		}
 		else
 		{
-			System.out.println("Resposta Inválido, tente novamente.");
+			System.out.println("Resposta Inválida, tente novamente.");
 			funcaoTabuleiro(jogador);
 		}
 	}

@@ -14,14 +14,18 @@ public class PropriedadeEspecialSorteReves extends PropriedadeEspecial {
 		this.lista = lista;
 	}
 	
-	/** AINDA SERÁ IMPLEMENTADO
+	/** AINDA SERÃ� IMPLEMENTADO
 	 * @param jogador Jogador 
 	 */
 	public void funcaoTabuleiro(Jogador jogador) {
-//		System.out.print("Sorte ou Revés, "+jogador.getNome()+" nada acontece!\n");
+//		System.out.print("Sorte ou RevÃ©s, "+jogador.getNome()+" nada acontece!\n");
 		if(this.lista.getDeck().getLista().get(this.lista.getDeck().getLista().size() - 1).getNumber() == 2)
 		{
 			System.out.println(this.lista.getDeck().getLista().get(this.lista.getDeck().getLista().size() - 1).funcaoCarta(lista));
+			this.lista.getDeck().desinfileirar();
+		}else if(this.lista.getDeck().getLista().get(this.lista.getDeck().getLista().size() - 1).getNumber() == 6
+				|| this.lista.getDeck().getLista().get(this.lista.getDeck().getLista().size() - 1).getNumber() == 7) {
+			System.out.println(this.lista.getDeck().getLista().get(this.lista.getDeck().getLista().size() - 1).funcaoCarta(jogador,lista));
 			this.lista.getDeck().desinfileirar();
 		}
 		
