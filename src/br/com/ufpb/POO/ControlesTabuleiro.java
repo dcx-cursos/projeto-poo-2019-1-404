@@ -19,15 +19,18 @@ public class ControlesTabuleiro {
 	private InsereJogadores insereJogadores;
 	private ObterProxId obterProxId;
 	private Scanner scan;
-	private Dados dados = new Dados();
+	public Dados dados;
 	private VerificadoresDojogo verificador = new VerificadoresDojogo();
-	
+	private int qtdJogadasSeguidas =  0;
+	private boolean dadosIguais = false;
+			
 	public ControlesTabuleiro() {
 		this.listas = new Listas();
 		this.tabuleiro = new Tabuleiro(this.listas);
 		this.obterProxId = new ObterProxId();
 		this.insereJogadores = new InsereJogadores(this.listas);
 		this.scan = new Scanner(System.in);
+		this.dados = new Dados();
 		iniciarJogo();
 	}
 
@@ -74,20 +77,28 @@ public class ControlesTabuleiro {
 	
 	public void jogarDados() {
 		dados.lancarDados();
+		CasaDoTabuleiro casaJogador = this.jogadorDaVez.getPos();
+
+		//Verificar se o jogador jogou mais três vezes seguidas e prendê-lo.
+
+		if (dados.dado1==dados.dado2) {
+			this.qtdJogadasSeguidas+=1;
+			System.out.println("\nDados iguais\n"+this.qtdJogadasSeguidas);
+			moverJogador(jogadorDaVez, casaJogador);
+			this.dadosIguais = true;
+		}
+		
 		int indiceCasaDestino = this.obterProxId.obterIdProxCasa(this.jogadorDaVez.getIdAtualDoJogador(), dados.resultado(), this.jogadorDaVez);
 		System.out.println("O jogador "+this.jogadorDaVez.getNome()+" ("+this.jogadorDaVez.getCorPeao()+") tirou "+dados.getDado1()+","+dados.getDado2()+
 		" o peÃ£o avanÃ§ou para "+indiceCasaDestino+" - "+this.listas.getTabuleiro().get(indiceCasaDestino).getNome());
 		moverJogador(jogadorDaVez, this.listas.getCasaById(indiceCasaDestino));
 		this.listas.getCasaById(indiceCasaDestino).funcaoTabuleiro(jogadorDaVez);
-		/*
-		if (qtdJogadasSeguidas >= 3) {
-			System.out.println("O jogador jogou 3 vezes seguidas, o jogador serï¿½ preso por trapacear");
-		}
-		if(dados.dado1 == dados.dado2) {
-			qtdJogadasSeguidas += 1;
-			jogarDados();
-		}
-		*/
+		
+		this.dadosIguais = false;
+	}
+	
+	public void jogardadosCarta() {
+		jogarDados();
 	}
 
 	/**MÃ©todo para verificar se o Jogador realmente deseja sair*/
@@ -116,6 +127,16 @@ public class ControlesTabuleiro {
 			if(escolha.equals("S") || escolha.equals("SAIR")) {
 				optionSair();
 			} if (escolha.equals("J") || escolha.equals("JOGAR")) {
+				if(this.dadosIguais)
+				{
+					jogarDados();
+				}
+				if(this.dadosIguais && this.qtdJogadasSeguidas>=3) {
+					this.jogadorDaVez.setEstaPreso(true);
+					this.qtdJogadasSeguidas = 0;
+					this.listas.getCasaById(30).funcaoTabuleiro(this.jogadorDaVez);
+				}
+				this.qtdJogadasSeguidas = 0;
 				jogarDados();
 			} if(escolha.equals("STATUS")){
 				System.out.println(jogadorDaVez.toStatus());
