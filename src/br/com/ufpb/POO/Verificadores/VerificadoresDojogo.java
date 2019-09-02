@@ -24,6 +24,9 @@ public class VerificadoresDojogo {
 		}
 	}
 	
+	
+	
+	
 	/**Método para verificar se a cor existe e se não é um número*/
 	public boolean corExiste(String cor, ArrayList<String> cores) {
 		try {
@@ -39,6 +42,10 @@ public class VerificadoresDojogo {
 		}
 		
 	}
+	
+	
+	
+	
 	/**Método para verifica se o nome não é um número ou se já é utilizado em jogadores*/
 	public boolean nomeIsValido(String nome, ArrayList<Jogador> jogadores) {
 		try {
@@ -59,6 +66,10 @@ public class VerificadoresDojogo {
 			return true;
 		}
 	}
+	
+	
+	
+	
 	/**Método para verificar se um determinado comando é válido para uma ação a fazer*/
 	public boolean ComandoIsValido(String comando, String[] Comandos) {
 		//String[] One = {"JOGAR","STATUS", "SAIR"};
@@ -69,6 +80,10 @@ public class VerificadoresDojogo {
 		}
 		return false;
 	}
+	
+	
+	
+	
 	//Metodo responsavel por verificar se o jogador possui saldo
 	public boolean possuiSaldo(Jogador jogador) {
 		if (jogador.getSaldo()>=0) {
@@ -76,6 +91,8 @@ public class VerificadoresDojogo {
 		}
 		return false;
 		}
+	
+	
 	
 	
 	//Método responsavel por verificar se o jogador possui saldo necessario para comprar uma propriedade comercializavel.
