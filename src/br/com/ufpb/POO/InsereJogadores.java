@@ -8,11 +8,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import br.com.ufpb.POO.Propriedades.CasaDoTabuleiro;
+import br.com.ufpb.POO.Verificadores.VerificadoresDojogo;
 
 public class InsereJogadores {
 	private Listas listas;
 	private Scanner scan;
 	private ArrayList<String> cores = new ArrayList<String>();
+	private VerificadoresDojogo v = new VerificadoresDojogo();
 	
 	public InsereJogadores(Listas listas) {
 		this.listas = listas;
@@ -32,41 +34,67 @@ public class InsereJogadores {
 		cores.add("rosa");
 	}
 	
-	public ArrayList<String> getCores(){
+	/**Método get de Cores*/
+	public ArrayList<String> getCores(){	
 		return this.cores;
 	}
 	
+	/**Método para receber a quantidade de jogadores para a partida*/
+	
+	public int recebeQuantidadeJogadores() {
+		System.out.print("Digite o nÃºmero de jogadores [2-8]: ");
+		String n = this.scan.nextLine();
+		if(v.ValorisValido(n)) {
+			return Integer.parseInt(n);
+		}
+		return recebeQuantidadeJogadores();
+	}
+	
+	/**Método para cria a string printCores pode ficar sendo atualizada com a lista atual de cores*/
+	
+	public String criaPrintCores() {
+		String printCores = "";
+		for(String cor: this.cores) {
+			printCores += "["+cor+"]";
+		}
+		return printCores;
+	}
+	
+	/**Método para receber nome do jogador*/
+	
+	public String recebeNomeJogador(int k) {
+		System.out.print("Digite o nome do Jogador "+(k+1)+": ");
+		String nome = this.scan.nextLine();
+		if(v.nomeIsValido(nome, listas.getJogadores())) {
+			return nome;
+		}
+		return recebeNomeJogador(k);
+	}
+	
+	/**Método para receber a cor escolhida pelo Jogador para o peão*/
+	
+	public String recebeCorPeao(int k, String printCores) {
+		System.out.print("Escolha a cor do peão do jogador "+(k+1)+" entre as opções seguintes:\n"+printCores+"\n: ");
+		String corPeao = this.scan.nextLine();
+		if(v.corExiste(corPeao, cores)) {
+			return corPeao;
+		}
+		return recebeCorPeao(k,printCores);
+	}
 	/**Método para realizar a inserção de jogadores ao jogo*/
 
 	public void inserirJogador() {
-		String printCores = "";
 		CasaDoTabuleiro pontoDePartida = this.listas.getTabuleiro().get(0);
-		System.out.print("Digite o número de jogadores [2-8]: ");
-		int n = Integer.parseInt(this.scan.nextLine());
-		if (n>1 && n<9){
-		    iniciarCores();
-
-			for(int k = 0; k < n;) {
-				for(String cor: this.cores) {
-					printCores += "["+cor+"]";
-				}
-			System.out.print("Digite o nome do Jogador "+(k+1)+": ");
-			String nome = this.scan.nextLine();
-			System.out.print("Escolha a cor do peão do jogador "+(k+1)+" entre as opções seguintes:\n"+printCores+"\n: ");
-			String corPeao = this.scan.nextLine();
-			while(!cores.contains(corPeao)){ 
-				System.out.println("Digite uma cor válida!");
-				corPeao = scan.nextLine();
-			}
+		int n = recebeQuantidadeJogadores();
+	    iniciarCores();
+		for(int k = 0; k < n;) {
+			String printCores = criaPrintCores();
+			String nome = recebeNomeJogador(k);
+			String corPeao = recebeCorPeao(k,printCores);
 			this.listas.addJogador(new Jogador(nome, corPeao, pontoDePartida, 1500));
 			cores.remove(corPeao);
-			printCores = "";
 			k++;
 		}
 		this.listas.addListaDeJogadoresNaCasaDePartida();
-		} else if(n<2 || n>8) {
-			System.out.println("Número de jogadores indisponível.");
-			inserirJogador();
-		}
 	}
 }
