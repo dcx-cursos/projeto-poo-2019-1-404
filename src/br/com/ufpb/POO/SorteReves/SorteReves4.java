@@ -12,6 +12,6 @@ public class SorteReves4 extends SorteRevesAbs {
 	public String funcaoCarta(Jogador jogadorDaVez)
 	{
 		jogadorDaVez.receberTaxa(50);
-		return "Seu livro será publicado por uma grande editora";
+		return "----  SORTE  ----\nSeu livro será publicado por uma grande editora\nReceba R$ 50,00";
 	}
 }

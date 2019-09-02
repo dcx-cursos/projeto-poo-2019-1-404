@@ -12,6 +12,6 @@ public class SorteReves1 extends SorteRevesAbs {
 	public String funcaoCarta(Jogador jogadorDaVez)
 	{
 		jogadorDaVez.pagarTaxa(200);
-		return "Sua empresa foi multada por poluir demais";
+		return "----  REVES  ----\nSua empresa foi multada por poluir demais\nPague R$ 200,00";
 	}
 }

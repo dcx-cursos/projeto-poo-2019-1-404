@@ -12,6 +12,6 @@ public class SorteReves5 extends SorteRevesAbs {
 	public String funcaoCarta(Jogador jogadorDaVez)
 	{
 		jogadorDaVez.setTemHabeas(true);
-		return "Utilize este cartão para se livrar da prisão";
+		return "----  SORTE  ----\nUtilize este cartão para se livrar da prisão";
 	}
 }

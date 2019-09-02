@@ -26,4 +26,7 @@ public abstract class SorteRevesAbs {
 	{
 		this.numberCard = number;
 	}
+	public String funcaoCarta(Jogador jogadorDaVez,Listas lista) {
+		return "";
+	}
 }

@@ -16,6 +16,6 @@ public class SorteReves2 extends SorteRevesAbs {
 		{
 			jogador.receberTaxa(50);
 		}
-		return "O dia do seu casamento chegou, receba os presentes";
+		return "----  SORTE  ----\nO dia do seu casamento chegou, receba os presentes\nReceba R$ 50,00 (De cada Jogador)";
 	}
 }
