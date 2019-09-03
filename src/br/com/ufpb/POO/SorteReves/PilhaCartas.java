@@ -1,5 +1,6 @@
 package br.com.ufpb.POO.SorteReves;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -10,6 +11,7 @@ public class PilhaCartas {
 
   public PilhaCartas(){
 	  criarDeck();
+	  Collections.shuffle(this.cartas);
 	  this.cartaHabeasRetirada = false;
   }
   
