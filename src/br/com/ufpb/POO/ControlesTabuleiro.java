@@ -103,15 +103,17 @@ public class ControlesTabuleiro {
 
 	/**Método para verificar se o Jogador realmente deseja sair*/
 	
-	public void optionSair(){
+	public boolean optionSair(){
 		System.out.println("Deseja realmente sair?[s/n]");
 		String escolha2 = this.scan.nextLine().toUpperCase();
 		if(escolha2.equals("S")) {
 			this.listas.setJogadoresJogando(jogadorDaVez);
+			return true;
 		} else if(!escolha2.equals("N")) {
 			System.out.println("Comando indisponível!");
 			optionSair();
 		}
+		return false;
 	}
 
 	/**Método que mostra as opções(operações) do jogo para o jogador, onde realiza a chamada de todos os métodos que sejam necessarios para realizar essas operações.
@@ -125,7 +127,9 @@ public class ControlesTabuleiro {
 			System.out.print("Entre com um comando: ");
 			String escolha = this.scan.nextLine().toUpperCase();
 			if(escolha.equals("S") || escolha.equals("SAIR")) {
-				optionSair();
+				if(!optionSair()) {
+					options(jogadorDaVez);
+				}
 			} if (escolha.equals("J") || escolha.equals("JOGAR")) {
 				if(this.dadosIguais)
 				{
