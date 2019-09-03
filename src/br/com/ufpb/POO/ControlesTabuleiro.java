@@ -79,7 +79,7 @@ public class ControlesTabuleiro {
 		dados.lancarDados();
 		CasaDoTabuleiro casaJogador = this.jogadorDaVez.getPos();
 
-		//Verificar se o jogador jogou mais três vezes seguidas e prendê-lo.
+		//Verificar se o jogador jogou mais trï¿½s vezes seguidas e prendï¿½-lo.
 
 		if (dados.dado1==dados.dado2) {
 			this.qtdJogadasSeguidas+=1;
