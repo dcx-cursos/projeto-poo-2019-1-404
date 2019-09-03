@@ -53,10 +53,6 @@ public class PilhaCartas {
 	  insereFinal(new SorteReves9());
 	  insereFinal(new SorteReves10());
 	  insereFinal(new SorteReves11());
-	  /*
-	   * Falta fazer o facade
-	  insereFinal(new SorteReves12Falta());
-	  */
 	  insereFinal(new SorteReves13());
 	  insereFinal(new SorteReves14());
 	  insereFinal(new SorteReves15());
@@ -68,10 +64,6 @@ public class PilhaCartas {
 	  insereFinal(new SorteReves21());
 	  insereFinal(new SorteReves22());
 	  insereFinal(new SorteReves23());
-	  /*
-	   * Falta fazer o facade
-	  insereFinal(new SorteReves24Falta());
-	  */
 	  insereFinal(new SorteReves25());
 	  insereFinal(new SorteReves26());
 	  insereFinal(new SorteReves27());
@@ -103,7 +95,7 @@ public class PilhaCartas {
 	  
 	  return this.cartas;
   }
-  /*
+ 
   public static void main(String[] args)
   {
 	  PilhaCartas p = new PilhaCartas();
@@ -118,5 +110,5 @@ public class PilhaCartas {
 		  System.out.println(s.getNumber());
 	  }		  
   }
-*/
+
 }
