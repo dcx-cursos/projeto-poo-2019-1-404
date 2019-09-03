@@ -31,7 +31,6 @@ public class ControlesTabuleiro {
 		this.insereJogadores = new InsereJogadores(this.listas);
 		this.scan = new Scanner(System.in);
 		this.dados = new Dados();
-		iniciarJogo();
 	}
 
 	/**Método para inserir jogadores, onde realiza a chamada do método inciaJogadorDaVez*/
