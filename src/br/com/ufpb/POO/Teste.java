@@ -13,8 +13,8 @@ public class Teste {
 
     public static void main(String[] args) {
     	ControlesTabuleiro controles = new ControlesTabuleiro();
-    	Listas lista = new Listas();
-    	Tabuleiro tabuleiro = new Tabuleiro(lista);
+    	
+    	controles.iniciarJogo();
     	
     }
 }
