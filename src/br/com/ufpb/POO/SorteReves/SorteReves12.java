@@ -3,11 +3,11 @@ package br.com.ufpb.POO.SorteReves;
 import br.com.ufpb.POO.ControlesTabuleiro;
 import br.com.ufpb.POO.Jogador;
 
-public class SorteReves12Falta extends SorteRevesAbs {
+public class SorteReves12 extends SorteRevesAbs {
 	
 	private ControlesTabuleiro controles;
 
-	public SorteReves12Falta()
+	public SorteReves12()
 	{
 		setNumber(12);
 	}
