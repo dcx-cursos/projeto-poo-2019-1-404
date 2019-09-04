@@ -22,7 +22,9 @@ public class Jogador implements IJogador{
     private boolean estaPreso;
     private boolean temHabeas;
     private boolean usouHabeas;
-
+    
+    /* Construtor que recebe um nome, uma cor do peao, uma posição no tabuleiro e um salario.
+     */
     public Jogador(String nome, String cor_peao, CasaDoTabuleiro posicao, int saldo) {
         this.nome = nome;
         this.cor_peao = cor_peao;

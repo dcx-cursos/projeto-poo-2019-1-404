@@ -1,4 +1,5 @@
 package br.com.ufpb.POO.Tests;
+/* Classe de testes para objetos do tipo Listas.*/
 
 import static org.junit.Assert.*;
 
@@ -20,6 +21,9 @@ public class ListasTest {
 	public Jogador jogador2;
 	public Jogador jogador3;
 	public Jogador jogador4;
+	
+	/* Inicializa os objetos do tipo Jogador, Listas e Tabuleiro.
+	 */
 	@Before
 	public void inciaObjetos() {
 		lista = new Listas();
@@ -29,9 +33,15 @@ public class ListasTest {
 		jogador2 = new Jogador("Anderson", "Preto", lista.getTabuleiro().get(6), 1500);
 		jogador2.setId(1);
 		jogador3 = new Jogador("Jobson", "Verde", lista.getTabuleiro().get(1), 1500);
-		jogador4 = new Jogador("Josu�", "Vermelho", lista.getTabuleiro().get(2), 1500);
+		jogador4 = new Jogador("Josu�", "Vermelho", lista.getTabuleiro().get(2), 1500);
 		
 	}
+	
+	/* Testa o comportamento do método addJogador.
+	 * Adiciona 2 jogadores na lista de jogadores ativos.
+	 * Verifica se os jogadores está na lista.
+	 * Verifica se o tamanho da lista é igual ao numero de jogadores.
+	 */
 	@Test
 	public void testAddJogador() {
 		lista.addJogador(jogador1);
@@ -41,7 +51,11 @@ public class ListasTest {
 		assertEquals(lista.getJogadores().get(1),jogador2);
 		assertEquals(2,lista.getJogadores().size());
     }
-
+	
+	/* Testa a funcionalidade do método addListaDeJogadoresNaCasaDePartida.
+	 * Adiciona jogadores na lista de jogadores da casa inicial.
+	 * Verifica se os jogadores estão na casa de partida.
+	 */
 	@Test
 	public void testAddListaDeJogadoresNaCasaDePartida(){
 		lista.addJogador(jogador1);
@@ -63,6 +77,13 @@ public class ListasTest {
 		
 	}
 	
+	/* Testa o comportamento do método getJogadorId.
+	 * Adiciona 2 jogadores na lista da casa inicial.
+	 * Verifica se o id dos jogadores são diferentes, espera-se um valor true.
+	 * Verifica se id do jogador 1 é igual a zero.
+	 * Verifica se id do jogador 2 é igual a um.
+	 * Verifica se o id de cada jogador corresponde ao id dos jogadores da casa inicial.
+	 */
 	@Test
 	public void testGetJogadorId(){
 		lista.addJogador(jogador1);

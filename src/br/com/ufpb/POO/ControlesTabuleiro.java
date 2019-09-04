@@ -70,7 +70,7 @@ public class ControlesTabuleiro {
 //			int novoId = this.jogadorDaVez.getId();
 //			this.jogadorDaVez = this.listas.getJogadorId(this.obterProxId.obterIdProxJogador(novoId, jogadores));
 //		}
-		}
+	}
 
 	/**Método para realizar o "lançamento" dos dados*/
 	
