@@ -1,4 +1,5 @@
 package br.com.ufpb.POO.Tests;
+/** Classe para realizar o suite de testes*/
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;

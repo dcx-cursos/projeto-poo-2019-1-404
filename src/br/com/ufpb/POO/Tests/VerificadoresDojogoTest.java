@@ -1,4 +1,5 @@
 package br.com.ufpb.POO.Tests;
+/* Classe de testes para objetos do tipo VerificadoresDojogoTest.*/
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -23,7 +24,8 @@ public class VerificadoresDojogoTest {
 	public InsereJogadores insereJogadores;
 	//public List<String> cores = Arrays.asList("preto","branco","vermelho","verde","azul","amarelo","laranja","rosa"); ---Essa � uma lista imutavel.
 	
-	//Inicialização dos objetos jogador,propriedade comercializavel,dados e do verificador do jogo.
+	/* Inicialização dos objetos jogador,propriedade comercializavel,dados e do verificador do jogo.
+	 */
 	@Before
 	public void iniciaObjetos() {
 	jogador = new Jogador("Josué", "azul", new CasaDoTabuleiro(), 1000);
@@ -37,7 +39,7 @@ public class VerificadoresDojogoTest {
 	
 	
 	
-	/*Teste responsavel por verificar o comportamento do metodo "PossuiSaldo".
+	/* Teste responsavel por verificar o comportamento do metodo "PossuiSaldo".
 	 * No primeiro caso espera-se um retorno false pelo fato do jogador não possuir saldo positivo.
 	 * No segundo caso espera-se um retorno true pelo fato do jogador ter um saldo positivo
 	 * No terceiro caso espera-se um retorno true pelo fato do jogador possuir um saldo igual a zero
@@ -82,6 +84,11 @@ public class VerificadoresDojogoTest {
 		System.out.println(dados.resultado());
 		assertTrue(verificador.ResultadoDosDados(dados));
 	}
+	
+	/* Teste para verificar o comportamento do método valorValido.
+	 * Verifica se os valores 'a','#','0','1','9' e '-3' são valores válidos. Para essas verificações espera-se valores 'false'. 
+	 * Depois verifica se os valores '2','5' e '8' são válidos. Espera-se um valor 'false'.
+	 */
 	@Test
 	public void testValorisValido() {
 		assertFalse(verificador.ValorisValido(""));
@@ -95,6 +102,14 @@ public class VerificadoresDojogoTest {
 		assertTrue(verificador.ValorisValido("5"));
 		assertTrue(verificador.ValorisValido("8"));
 	}
+	
+	/* Testa o comportamento do método corExiste.
+	 * Inicia as cores.
+	 * Verifica se existe cor com o valor " ". Espera-se um valor false.
+	 * Verifica se existe cor com o valor '1'. Espera-se um valor false para essa verificação.
+	 * Verifica se existe cor com o valor "branco". Espera-se um valor true.
+	 * Verifica se existe cor com o valor "cinza". Espera-se um valor false.
+	 */
 	@Test
 	public void testCorExiste() {
 		insereJogadores.iniciarCores();
@@ -103,6 +118,13 @@ public class VerificadoresDojogoTest {
 		assertTrue(verificador.corExiste("branco", insereJogadores.getCores()));
 		assertFalse(verificador.corExiste("cinza", insereJogadores.getCores()));
 	}
+	
+	/* Testa a funcionalidade do método nomeisValido.
+	 * Verifica se o nome "Josué" é válido (se não existe na lista de jogadores). Espera-se um valor true para essa varificação.
+	 * Verifica se o nome " " (vazio) está na lista de jogadores. Espera-se um valor false.
+	 * Adiciona um jogador com nome "Josué".
+	 * Verifica se o nome "Josué" é válido (se não existe na lista de jogadores) para ser cadastrado. Espera-se um valor false.
+	 */
 	@Test
 	public void testNomeisValido() {
 		assertTrue(verificador.nomeIsValido("Josué",listas.getJogadores()));
@@ -110,6 +132,12 @@ public class VerificadoresDojogoTest {
 		listas.addJogador(jogador);
 		assertFalse(verificador.nomeIsValido("Josué",listas.getJogadores()));
 	}
+	
+	/* Testa o comportamento do método comandoIsVálido
+	 * Cria um array do tipo String com as opções de JOGAR, STATUS e SAIR.
+	 * Verifica se os valores "" (null), " " (vazio),"s","$" e "0" estão no array de comandos. Espera-se false para essa verificação.
+	 * Verifica se os valores "JOGAR" e "status" estão no array de comandos. Epera-se true para essa verificação.
+	 */
 	@Test
 	public void testComandoIsValido() {
 		String[] One = {"JOGAR","STATUS", "SAIR"};

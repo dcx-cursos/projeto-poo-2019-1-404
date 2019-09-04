@@ -1,4 +1,7 @@
 package br.com.ufpb.POO.Verificadores;
+/**Classe para objetos do tipo Verificadores, onde serão contido, valores e métodos do mesmo.
+ */
+
 
 import java.awt.List;
 import java.util.ArrayList;

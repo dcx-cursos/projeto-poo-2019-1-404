@@ -150,7 +150,9 @@ public class Listas {
 	public void setTabuleiro(ArrayList<CasaDoTabuleiro> tabuleiro) {
 		this.tabuleiro = tabuleiro;
 	}
-	
+	/** Método para obter o deck de cartas
+	 * @return PilhaCartas
+	 */
 	public PilhaCartas getDeck()
 	{
 		return this.deck;

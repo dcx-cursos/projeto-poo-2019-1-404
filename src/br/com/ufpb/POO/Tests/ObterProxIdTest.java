@@ -1,4 +1,5 @@
 package br.com.ufpb.POO.Tests;
+/* Classe de testes para objetos do tipo ObterProxIdTest.*/
 
 import static org.junit.Assert.*;
 
@@ -19,6 +20,8 @@ public class ObterProxIdTest {
 	public Jogador jogador2;
 	public Jogador jogador3;
 	
+	/* Inicializa objetos do tipo Listas e ObterProxId.
+	 */
 	@Before
 	public void iniciaObjetos(){
 		obterProxId = new ObterProxId();
@@ -28,9 +31,14 @@ public class ObterProxIdTest {
 		jogador1.setId(0);
 		jogador2 = new Jogador("Ismar", "Azul", lista.getTabuleiro().get(6), 1500);
 		jogador2.setId(1);
-		jogador3 = new Jogador("Josu�", "Vermelho", lista.getTabuleiro().get(1), 1500);
+		jogador3 = new Jogador("Josu�", "Vermelho", lista.getTabuleiro().get(1), 1500);
 		jogador3.setId(2);
 	}
+	
+	/* Testa o comportamento do método obterIdProxCasa.
+	 * Adiciona o jogador na lista de jogadores ativos na casa inicial.
+	 * Verifica se o id da proxima casa é igual a 13, 25 30 e 0.
+	 */
 	@Test
 	public void testObterIdProxCasa() {
 		lista.addJogador(jogador1);
@@ -49,6 +57,11 @@ public class ObterProxIdTest {
 		int proxId4 = obterProxId.obterIdProxCasa(jogador1.getPos().getIndice(),10,jogador1);
 		assertEquals(0,proxId4);	
 	}
+	
+	/* Testa a funcionalidade do método obterIdProxJogador.
+	 * Adiciona 3 jogadores na lista de jogadores ativos.
+	 * Verifica se o id de cada jogador é igual ao id do proximo jogador da lista.
+	 */
 	@Test
 	public void testObterProxJogador() {
 		lista.addJogadorJogando(jogador1);

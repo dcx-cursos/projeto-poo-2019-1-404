@@ -1,4 +1,7 @@
 package br.com.ufpb.POO.SorteReves;
+/**Classe para objetos do tipo SorteReves, onde serão contido, valores e métodos do mesmo.
+ * @author Anderson, Ismar, Jobson, Josué
+ */
 
 import java.util.Collections;
 import java.util.LinkedList;
@@ -8,38 +11,62 @@ public class PilhaCartas {
 
   private List<SorteRevesAbs> cartas = new LinkedList<SorteRevesAbs>();
   private boolean cartaHabeasRetirada;
-
+  
+  /* Construtor
+   */
   public PilhaCartas(){
 	  criarDeck();
 	  Collections.shuffle(this.cartas);
 	  this.cartaHabeasRetirada = false;
   }
   
+  /* Método para adicionar uma carta no final da pilha.
+   * @param SorteRevesAbs - Carta para adicionar
+   */
   public void insereFinal(SorteRevesAbs carta){
 	  this.cartas.add(carta);
   }
   
+  /* Método para adicionar uma carta no inicio da pilha.
+   * @param SorteRevesAbs - Carta a ser adicionada
+   */
   public void insereInicio(SorteRevesAbs objeto) {
     this.cartas.add(0, objeto);
   }
   
+  /* Método para adicionar a carata Habeas Corpus
+   * @param SorteRevesAbs - Carta Habeas Corpus a ser adicionada
+   * 
+   */
   public void insereCartaHabeas(){
 	  this.cartas.add(0, new SorteReves5());
 	  this.cartaHabeasRetirada = false;
   }
-
+  /* Método para retirar uma carta da lista.
+   * @return SorteRevesAbs
+   */
   public SorteRevesAbs remove() {
     return this.cartas.remove(this.cartas.size() - 1);
   }
-
+  
+  /** Método para verificar se a lista está vazia.
+   * 
+   * @return boolean
+   */
   public boolean vazia() {
 	  return this.cartas.size() == 0;
   }
   
+  /**Método para verificar se a carta Habeas Corpus foi retirada.
+   * 
+   * @return boolean
+   */
   public boolean getCartaHabeasRetirada(){
 	  return this.cartaHabeasRetirada;
   }
   
+  /** Método para inesrir as cartas no deck.
+   */
   private void criarDeck(){
 	  
 	  insereFinal(new SorteReves1());
@@ -73,6 +100,8 @@ public class PilhaCartas {
 	  insereFinal(new SorteReves31());
   }
   
+  /** Método responsável por desenfileirar as cartas 
+   */
   public void desinfileirar(){
 	  
 	  SorteRevesAbs cartaHabeas = null;
@@ -85,17 +114,23 @@ public class PilhaCartas {
 		  insereInicio(temp);
 	  }		  
   }
-  
+  /** Método para retirar uma carta 
+   * @return SorteRevesAbs
+   */
   public SorteRevesAbs retirarCarta(){
 	  
 	 return remove();
   }
   
+  /** Método para retornar uma lista de cartas
+   * 
+   * @return List<SorteRevesAbs>
+   */
   public List<SorteRevesAbs> getLista(){
 	  
 	  return this.cartas;
   }
- 
+  
   public static void main(String[] args)
   {
 	  PilhaCartas p = new PilhaCartas();
