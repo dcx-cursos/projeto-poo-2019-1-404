@@ -32,7 +32,6 @@ public class ControlesTabuleiro {
 		this.scan = new Scanner(System.in);
 		this.dados = new Dados();
 	}
-
 	/**Método para inserir jogadores, onde realiza a chamada do método inciaJogadorDaVez*/
 	
 	public void inserirJogadores() {

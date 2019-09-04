@@ -95,4 +95,5 @@ public class ListasTest {
 		assertEquals(jogador1,lista.getJogadorId(0));
 		assertEquals(jogador2,lista.getJogadorId(1));
 	}
+	
 }

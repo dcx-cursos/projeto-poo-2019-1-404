@@ -185,6 +185,7 @@ public class Jogador implements IJogador{
     public int getQuantPropriedades() {
     	return this.minhasPropriedades.size();
     }
+
     
     public boolean getEstaPreso()
     {

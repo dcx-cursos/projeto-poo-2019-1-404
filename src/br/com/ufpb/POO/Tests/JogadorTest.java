@@ -33,6 +33,7 @@ public class JogadorTest {
 	 * Verifica se o jogador possui a propriedade, espera-se como resultado o valor true.
 	 * Em seguida verifica se o valor foi debitado do saldo do jogador, espera-se como resultado o valor true.
 	 */
+	
 	@Test
 	public void testComprar(){
 		CasaDoTabuleiro casa = new Ponto_de_Partida("Ponto de Partida", 0);

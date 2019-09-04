@@ -36,4 +36,5 @@ public class CasaDoTabuleiroTest {
 		assertTrue(lista.getTabuleiro().get(7).getJogadoresNaCasa().get(0)==jogador1);
 		assertFalse(lista.getTabuleiro().get(0).getJogadoresNaCasa().contains(jogador1));
 	}
+	
 }
