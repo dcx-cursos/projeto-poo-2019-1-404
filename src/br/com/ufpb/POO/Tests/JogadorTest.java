@@ -91,5 +91,4 @@ public class JogadorTest {
 						+ "\n"+titulos;
 		assertEquals(expectedStatus,status);
 	}
-
 }

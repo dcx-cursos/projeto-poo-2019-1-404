@@ -89,11 +89,9 @@ public class ListasTest {
 		lista.addJogador(jogador1);
 		lista.addJogador(jogador2);
 		lista.addListaDeJogadoresNaCasaDePartida();
-		//Parte 1
 		assertTrue(jogador1.getId()!=jogador2.getId());
 		assertTrue(jogador1.getId()==0);
 		assertTrue(jogador2.getId()==1);
-		//Parte 2
 		assertEquals(jogador1,lista.getJogadorId(0));
 		assertEquals(jogador2,lista.getJogadorId(1));
 	}

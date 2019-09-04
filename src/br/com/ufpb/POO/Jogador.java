@@ -182,7 +182,6 @@ public class Jogador implements IJogador{
 
     /**Método para retornar a quant de Propriedades o Jogador possui
      * @return int - quant de Propriedades*/
-    
     public int getQuantPropriedades() {
     	return this.minhasPropriedades.size();
     }
