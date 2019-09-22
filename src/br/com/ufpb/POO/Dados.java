@@ -9,8 +9,8 @@ import java.util.Random;
 public class Dados {
 
 	Random lancamento = new Random();
-	int dado1;
-	int dado2;
+	private static int dado1;
+	private static int dado2;
 	
 	/** Método para lançar dois dados de valores aleatórios.
 	 */
@@ -23,22 +23,22 @@ public class Dados {
 	 * @return int
 	 */
 	public int resultado() {
-		return this.dado1+this.dado2;
+		return Dados.dado1+Dados.dado2;
 	}
 	
 	/** Método para obter o valor do dado 1.
 	 * 
 	 * @return int
 	 */
-	public int getDado1() {
-		return this.dado1;
+	public static int getDado1() {
+		return dado1;
 	}
 	
 	/** Método para obter o valor do dado 2.
 	 * 
 	 * @return int
 	 */
-	public int getDado2() {
-		return this.dado2;
+	public static int getDado2() {
+		return dado2;
 	}
 }
