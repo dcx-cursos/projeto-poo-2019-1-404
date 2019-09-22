@@ -10,18 +10,34 @@ import br.com.ufpb.POO.Propriedades.CasaDoTabuleiro;
 import br.com.ufpb.POO.SorteReves.PilhaCartas;
 
 public class Listas {
+	private static Listas instance;
     private ArrayList<Jogador> jogadores;
     private ArrayList<Jogador> jogadoresJogando;
     private ArrayList<Jogador> jogadoresPresos;
     private ArrayList<CasaDoTabuleiro> tabuleiro;
     private PilhaCartas deck;
 
-    public Listas() {
+    private Listas() {
     	this.jogadores = new ArrayList<Jogador>();
     	this.jogadoresJogando = new ArrayList<Jogador>();
     	this.tabuleiro = new ArrayList<CasaDoTabuleiro>();
     	this.jogadoresPresos = new ArrayList<Jogador>();
     	this.deck = new PilhaCartas();
+    }
+    
+    public static Listas getInstance()
+    {
+    	if(instance == null)
+    	{
+    		synchronized (Listas.class) {
+    			if(instance == null) 
+    			{
+    				instance = new Listas();    				
+    			}
+			}
+    	}
+    	
+    	return instance;
     }
     
     /**Método para adicionar jogadores a lista de Jogadores
@@ -31,12 +47,13 @@ public class Listas {
     public void addJogador(Jogador jogador) {
         this.jogadores.add(jogador);
     }
+    
 
     /**Método para adicionar jogadores da lista Jogadores na lista de JogadoresNaCasaDePartida*/
     
 	public void addListaDeJogadoresNaCasaDePartida(){
 		for (Jogador jogador : this.jogadores) {
-			this.jogadoresJogando.add(jogador);
+			this.jogadoresJogando.add(0, jogador);
 			this.tabuleiro.get(0).adicionarJogadoresNaListaDaCasa(jogador);
 		}
 	}
@@ -46,7 +63,7 @@ public class Listas {
      */
 	
     public void addJogadorJogando(Jogador jogador) {
-        this.jogadoresJogando.add(jogador);
+        this.jogadoresJogando.add(0, jogador);
     }
 
     /**Método para adicionar um Jogador a lista de jogadoresPresos
@@ -61,25 +78,11 @@ public class Listas {
      * @return Jogador - primeiro Jogador
      */
 
-    public Jogador getPrimeiroJogador() {
-        return this.jogadores.get(0);
-    }
-
-    /**Método buscar e retornar um Jogador pelo seu Id
-     * @param int - Id
-     * @return Jogador - Jogador encontrado
-     */
-
-    public Jogador getJogadorId(int id) {
-	    Jogador jogador = null;
-	    for (int i = 0; i < this.tabuleiro.size(); i++) {
-		    for (Jogador jog : this.tabuleiro.get(i).getJogadoresNaCasa()) {
-			    if (jog.getId() == id) {
-				    jogador = jog;
-			    }
-		    }
-	    }	 
-	return jogador;
+    public Jogador getJogador() {
+    	Jogador temp = this.jogadoresJogando.get(this.jogadoresJogando.size() - 1);
+    	setJogadoresJogando();
+    	addJogadorJogando(temp);
+        return temp;
     }
 
     /**Método para retornar a lista de jogadores
@@ -102,8 +105,13 @@ public class Listas {
      * @param Jogador - Jogador
      */
 
-    public void setJogadoresJogando(Jogador jogador) {
-        this.jogadoresJogando.remove(jogador);
+    public Jogador setJogadoresJogando() {
+        return this.jogadoresJogando.remove(this.jogadoresJogando.size() - 1);
+    }
+    
+    public void setJogadorSaiu(Jogador jogador)
+    {
+    	this.jogadoresJogando.remove(jogador);
     }
 
     /**Método para retornar uma casa pelo Id
@@ -158,4 +166,3 @@ public class Listas {
 		return this.deck;
 	}
 }
-
