@@ -4,16 +4,12 @@ package br.com.ufpb.POO;
  * @author Anderson, Ismar, Jobson, Josué
  */
 
-import br.com.ufpb.POO.Propriedades.CasaDoTabuleiro;
-import br.com.ufpb.POO.*;
-
 public class Teste {
 
 	/**Main de inicialização do Jogo*/
 
     public static void main(String[] args) {
-    	ControlesTabuleiro controles = new ControlesTabuleiro();
-    	
+    	FachadaControles controles = new FachadaControles();
     	controles.iniciarJogo();
     	
     }
