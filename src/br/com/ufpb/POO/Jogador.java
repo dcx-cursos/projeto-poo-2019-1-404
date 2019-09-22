@@ -6,11 +6,10 @@ package br.com.ufpb.POO;
 
 import java.util.ArrayList;
 
-import br.com.ufpb.POO.Interfaces.IJogador;
 import br.com.ufpb.POO.Propriedades.CasaDoTabuleiro;
 import br.com.ufpb.POO.Propriedades.PropriedadeComercializavel;
 
-public class Jogador implements IJogador{
+public class Jogador{
 	private static int ultimoId = 0;
 	private String nome;
     private String cor_peao;

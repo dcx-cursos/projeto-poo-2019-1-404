@@ -5,9 +5,8 @@ package br.com.ufpb.POO.Propriedades;
 import java.util.ArrayList;
 
 import br.com.ufpb.POO.Jogador;
-import br.com.ufpb.POO.Interfaces.ICasas_do_Tabuleiro;
 
-public class CasaDoTabuleiro implements ICasas_do_Tabuleiro {
+public class CasaDoTabuleiro {
 
 	private String nome;
 	private ArrayList<Jogador> jogadoresNaCasa;
