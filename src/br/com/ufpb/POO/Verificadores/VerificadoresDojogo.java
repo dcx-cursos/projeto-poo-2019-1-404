@@ -3,12 +3,13 @@ package br.com.ufpb.POO.Verificadores;
  */
 
 
-import java.awt.List;
 import java.util.ArrayList;
 
 import br.com.ufpb.POO.Dados;
 import br.com.ufpb.POO.Jogador;
+import br.com.ufpb.POO.Listas;
 import br.com.ufpb.POO.Propriedades.PropriedadeComercializavel;
+import br.com.ufpb.POO.Propriedades.PropriedadeComercializavelImovel;
 
 public class VerificadoresDojogo {
 	
@@ -27,9 +28,6 @@ public class VerificadoresDojogo {
 		}
 	}
 	
-	
-	
-	
 	/**Método para verificar se a cor existe e se não é um número*/
 	public boolean corExiste(String cor, ArrayList<String> cores) {
 		try {
@@ -45,9 +43,6 @@ public class VerificadoresDojogo {
 		}
 		
 	}
-	
-	
-	
 	
 	/**Método para verifica se o nome não é um número ou se já é utilizado em jogadores*/
 	public boolean nomeIsValido(String nome, ArrayList<Jogador> jogadores) {
@@ -70,48 +65,55 @@ public class VerificadoresDojogo {
 		}
 	}
 	
-	
-	
-	
 	/**Método para verificar se um determinado comando é válido para uma ação a fazer*/
-	public boolean ComandoIsValido(String comando, String[] Comandos) {
-		//String[] One = {"JOGAR","STATUS", "SAIR"};
-		for (String s: Comandos ) {
-			if(s.equalsIgnoreCase(comando)) {
-				return true;
-			}
-		}
-		return false;
+	public boolean verificadorPodeConstruir(Jogador jogador) {
+		return jogador.PodeContruir();
 	}
 	
-	
-	
+	public boolean verificadorPossuiSaldoParaConstruir(Jogador jogador) {
+		int maiorValorCasa = 0;
+		for(PropriedadeComercializavelImovel p: jogador.getPropriedadesConstruir())
+		{
+			if(p.getValorCasa() > maiorValorCasa) maiorValorCasa = p.getValorCasa();
+		}
+		return jogador.getSaldo() >= maiorValorCasa;
+	}
 	
 	//Metodo responsavel por verificar se o jogador possui saldo
 	public boolean possuiSaldo(Jogador jogador) {
-		if (jogador.getSaldo()>=0) {
-			return true;
-		}
-		return false;
-		}
+		return jogador.getSaldo()>=0;
+	}
 	
-	
-	
+	public boolean verificarQuantJogadores() {
+		return Listas.getInstance().getJogadoresJogando().size() > 1;
+	}
 	
 	//Método responsavel por verificar se o jogador possui saldo necessario para comprar uma propriedade comercializavel.
 	public boolean podeComprar(Jogador jogador, PropriedadeComercializavel propriedade) {
-		if(propriedade.getValor()>jogador.getSaldo()) {
-			return false;
+		return propriedade.getValor()<=jogador.getSaldo();
+	}
+	
+	public boolean verificadorJaTemHotel(Jogador jogador, int escolha) {
+		return jogador.getPropriedadesConstruir().get(escolha - 1).getContCasas() == 5;
+	}
+	
+	public boolean verificadorTemCasaParaVender(Jogador jogador, int escolha) {
+		return jogador.getPropriedadesConstruir().get(escolha- 1).getContCasas() >= 1;
+	}
+	
+	public int verificarComandoDigitado(String comando) {
+		if(comando.equals("J") || comando.equals("JOGAR")) return 1;
+		if(comando.equals("STATUS")) return 2;
+		if(comando.equals("S") || comando.equals("SAIR")) return 3;
+		if(comando.equals("CONSTRUIR")) return 4;
+		if(comando.equals("VENDER")) return 5;
+		else {
+			return 0;
 		}
-		return true;
-		
 	}
 	
 	//Método responsavel por verificar se o resultado dos dados são válidos
 	public boolean ResultadoDosDados(Dados dado) {		
-		if (dado.resultado() <= 12 && dado.resultado() > 0) {
-			return true;
-		}
-		return false;
+		return dado.resultado() <= 12 && dado.resultado() > 0;
 	}
 }
