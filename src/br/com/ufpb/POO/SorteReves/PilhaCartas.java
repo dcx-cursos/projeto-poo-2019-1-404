@@ -9,7 +9,7 @@ import java.util.List;
 
 public class PilhaCartas {
 
-  private List<SorteRevesAbs> cartas = new LinkedList<SorteRevesAbs>();
+  private List<Integer> cartas = new LinkedList<Integer>();
   private boolean cartaHabeasRetirada;
   
   /* Construtor
@@ -23,15 +23,15 @@ public class PilhaCartas {
   /* Método para adicionar uma carta no final da pilha.
    * @param SorteRevesAbs - Carta para adicionar
    */
-  public void insereFinal(SorteRevesAbs carta){
+  public void insereFinal(int carta){
 	  this.cartas.add(carta);
   }
   
   /* Método para adicionar uma carta no inicio da pilha.
    * @param SorteRevesAbs - Carta a ser adicionada
    */
-  public void insereInicio(SorteRevesAbs objeto) {
-    this.cartas.add(0, objeto);
+  public void insereInicio(int carta) {
+    this.cartas.add(0, carta);
   }
   
   /* Método para adicionar a carata Habeas Corpus
@@ -39,13 +39,13 @@ public class PilhaCartas {
    * 
    */
   public void insereCartaHabeas(){
-	  this.cartas.add(0, new SorteReves5());
+	  this.cartas.add(0, 5);
 	  this.cartaHabeasRetirada = false;
   }
   /* Método para retirar uma carta da lista.
    * @return SorteRevesAbs
    */
-  public SorteRevesAbs remove() {
+  public int remove() {
     return this.cartas.remove(this.cartas.size() - 1);
   }
   
@@ -69,81 +69,58 @@ public class PilhaCartas {
    */
   private void criarDeck(){
 	  
-	  insereFinal(new SorteReves1());
-	  insereFinal(new SorteReves2());
-	  insereFinal(new SorteReves3());
-	  insereFinal(new SorteReves4());
-	  insereFinal(new SorteReves5());
-	  insereFinal(new SorteReves6());
-	  insereFinal(new SorteReves7());
-	  insereFinal(new SorteReves8());
-	  insereFinal(new SorteReves9());
-	  insereFinal(new SorteReves10());
-	  insereFinal(new SorteReves11());
-	  insereFinal(new SorteReves13());
-	  insereFinal(new SorteReves14());
-	  insereFinal(new SorteReves15());
-	  insereFinal(new SorteReves16());
-	  insereFinal(new SorteReves17());
-	  insereFinal(new SorteReves18());
-	  insereFinal(new SorteReves19());
-	  insereFinal(new SorteReves20());
-	  insereFinal(new SorteReves21());
-	  insereFinal(new SorteReves22());
-	  insereFinal(new SorteReves23());
-	  insereFinal(new SorteReves25());
-	  insereFinal(new SorteReves26());
-	  insereFinal(new SorteReves27());
-	  insereFinal(new SorteReves28());
-	  insereFinal(new SorteReves29());
-	  insereFinal(new SorteReves30());
-	  insereFinal(new SorteReves31());
+	  insereFinal(1);
+	  insereFinal(2);
+	  insereFinal(3);
+	  insereFinal(4);
+	  insereFinal(5);
+	  insereFinal(6);
+	  insereFinal(7);
+	  insereFinal(8);
+	  insereFinal(9);
+	  insereFinal(10);
+	  insereFinal(11);
+	  insereFinal(12);
+	  insereFinal(13);
+	  insereFinal(14);
+	  insereFinal(15);
+	  insereFinal(16);
+	  insereFinal(17);
+	  insereFinal(18);
+	  insereFinal(19);
+	  insereFinal(20);
+	  insereFinal(21);
+	  insereFinal(22);
+	  insereFinal(23);
+	  insereFinal(24);
+	  insereFinal(25);
+	  insereFinal(26);
+	  insereFinal(27);
+	  insereFinal(28);
+	  insereFinal(29);
+	  insereFinal(30);
+	  insereFinal(31);
   }
   
   /** Método responsável por desenfileirar as cartas 
    */
-  public void desinfileirar(){
+  public void desinfileirar(int temp){
 	  
-	  SorteRevesAbs cartaHabeas = null;
-	  SorteRevesAbs temp = retirarCarta();
-	  if(temp.getNumber() == 5){
+	  if(temp == 5){
 		  this.cartaHabeasRetirada = true;
-		  cartaHabeas = temp;
-		  temp = null;
-	  }else if(temp.getNumber() != 5){
+		  temp = 0;
+	  }else if(temp != 5){
 		  insereInicio(temp);
 	  }		  
-  }
-  /** Método para retirar uma carta 
-   * @return SorteRevesAbs
-   */
-  public SorteRevesAbs retirarCarta(){
-	  
-	 return remove();
   }
   
   /** Método para retornar uma lista de cartas
    * 
    * @return List<SorteRevesAbs>
    */
-  public List<SorteRevesAbs> getLista(){
+  public List<Integer> getLista(){
 	  
 	  return this.cartas;
-  }
-  
-  public static void main(String[] args)
-  {
-	  PilhaCartas p = new PilhaCartas();
-	  for(SorteRevesAbs s: p.cartas)
-	  {
-		  System.out.println(s.getNumber());
-	  }
-	  System.out.println("---");
-	  p.desinfileirar();
-	  for(SorteRevesAbs s: p.cartas)
-	  {
-		  System.out.println(s.getNumber());
-	  }		  
   }
 
 }
