@@ -37,7 +37,6 @@ public class FachadaControles {
 				criarJogador(nome, corPeao);
 				}
 			this.inserirJogadores.inserirJogadoresNaCasaDePartida();
-			System.out.println(Listas.getInstance().getJogadoresJogando());
 			System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 			System.out.println("O Banco Imobiliário vai começar. Aproveite!");
 			this.controles.iniciaJogadorDaVez();
