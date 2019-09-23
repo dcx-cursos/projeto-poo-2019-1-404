@@ -3,10 +3,10 @@ package br.com.ufpb.POO.Propriedades;
  */
 import br.com.ufpb.POO.Jogador;
 
-public class Ponto_de_Partida extends CasaDoTabuleiro {
+public class PontoDePartida extends CasaDoTabuleiro {
 	
 	//Construtor
-	public Ponto_de_Partida(String nome, int indice) {
+	public PontoDePartida(String nome, int indice) {
 		super(nome, indice);
 	}
 	
