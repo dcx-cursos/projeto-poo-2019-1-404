@@ -132,23 +132,4 @@ public class VerificadoresDojogoTest {
 		listas.addJogador(jogador);
 		assertFalse(verificador.nomeIsValido("Josué",listas.getJogadores()));
 	}
-	
-	/* Testa o comportamento do método comandoIsVálido
-	 * Cria um array do tipo String com as opções de JOGAR, STATUS e SAIR.
-	 * Verifica se os valores "" (null), " " (vazio),"s","$" e "0" estão no array de comandos. Espera-se false para essa verificação.
-	 * Verifica se os valores "JOGAR" e "status" estão no array de comandos. Epera-se true para essa verificação.
-	 */
-	@Test
-	public void testComandoIsValido() {
-		String[] One = {"JOGAR","STATUS", "SAIR"};
-		assertFalse(verificador.ComandoIsValido("", One));
-		assertFalse(verificador.ComandoIsValido(" ", One));
-		assertFalse(verificador.ComandoIsValido("s", One));
-		assertFalse(verificador.ComandoIsValido("$", One));
-		assertFalse(verificador.ComandoIsValido("0", One));
-		assertTrue(verificador.ComandoIsValido("JOGAR", One));
-		assertTrue(verificador.ComandoIsValido("status", One));
-		
-	}
-
 }
