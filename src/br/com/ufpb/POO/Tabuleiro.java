@@ -7,7 +7,7 @@ package br.com.ufpb.POO;
 import java.util.ArrayList;
 
 import br.com.ufpb.POO.Propriedades.CasaDoTabuleiro;
-import br.com.ufpb.POO.Propriedades.PontodePartida;
+import br.com.ufpb.POO.Propriedades.PontoDePartida;
 import br.com.ufpb.POO.Propriedades.PropriedadeComercializavelEmpresa;
 import br.com.ufpb.POO.Propriedades.PropriedadeComercializavelImovel;
 import br.com.ufpb.POO.Propriedades.PropriedadeEspecialImpostoDeRenda;
@@ -46,7 +46,7 @@ public class Tabuleiro {
 	/**Método para adicionar a lista de Casas ao tabuleiro*/
 	
 	public void criarCasasNoTabuleiro() {
-		tabuleiro.add(new PontodePartida("Ponto de Partida", 0));																			//POSICAO 00
+		tabuleiro.add(new PontoDePartida("Ponto de Partida", 0));																			//POSICAO 00
 		tabuleiro.add(new PropriedadeComercializavelImovel("Leblon", "lilás",100,6,30,90,270,400,500,50,0,1));										//POSICAO 01
 		tabuleiro.add(new PropriedadeEspecialSorteReves("Sorte ou Reves", 2));																//POSICAO 02
 		tabuleiro.add(new PropriedadeComercializavelImovel("Av. Presidente Vargas", "lilás", 60 , 2, 10, 30, 90, 160, 250, 50, 0, 3));				//POSICAO 03
