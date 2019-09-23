@@ -8,7 +8,7 @@ import java.util.ConcurrentModificationException;
 import org.junit.Test;
 
 import br.com.ufpb.POO.Propriedades.CasaDoTabuleiro;
-import br.com.ufpb.POO.Propriedades.Ponto_de_Partida;
+import br.com.ufpb.POO.Propriedades.PontoDePartida;
 import br.com.ufpb.POO.Propriedades.PropriedadeComercializavel;
 import br.com.ufpb.POO.Propriedades.PropriedadeComercializavelEmpresa;
 import br.com.ufpb.POO.Propriedades.PropriedadeComercializavelImovel;
@@ -36,7 +36,7 @@ public class JogadorTest {
 	
 	@Test
 	public void testComprar(){
-		CasaDoTabuleiro casa = new Ponto_de_Partida("Ponto de Partida", 0);
+		CasaDoTabuleiro casa = new PontoDePartida("Ponto de Partida", 0);
 		PropriedadeComercializavel propriedade = new PropriedadeComercializavelImovel("Leblon", "lilás",100,6,30,90,270,400,500,50,0,1);
 		Jogador jogador = new Jogador("Ismar", "Azul", casa, 1500);
 		jogador.comprar(propriedade);

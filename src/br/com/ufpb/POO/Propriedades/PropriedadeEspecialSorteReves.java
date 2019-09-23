@@ -18,7 +18,7 @@ public class PropriedadeEspecialSorteReves extends PropriedadeEspecial {
 	 */
 	public void funcaoTabuleiro(Jogador jogador) {
 		int cartaRetirada = Listas.getInstance().getDeck().remove();
-		SorteReves.pagarOuReceberValorCarta(cartaRetirada, jogador);
+		SorteReves.funcaoCarta(cartaRetirada, jogador);
 		Listas.getInstance().getDeck().desinfileirar(cartaRetirada);
 	}
 	

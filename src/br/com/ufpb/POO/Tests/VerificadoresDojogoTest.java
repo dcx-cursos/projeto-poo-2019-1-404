@@ -32,8 +32,8 @@ public class VerificadoresDojogoTest {
 	verificador = new VerificadoresDojogo();
 	propriedades = new PropriedadeComercializavel("nome","cor_regiao",100,10,10,10,10,10,10,10,10,10);
 	dados = new Dados();
-	listas = new Listas();
-	insereJogadores = new InsereJogadores(listas);
+	listas = Listas.getInstance();
+	insereJogadores = new InsereJogadores();
 	insereJogadores.iniciarCores();
 	}
 	

@@ -10,7 +10,7 @@ import br.com.ufpb.POO.Jogador;
 import br.com.ufpb.POO.Listas;
 import br.com.ufpb.POO.Tabuleiro;
 import br.com.ufpb.POO.Propriedades.CasaDoTabuleiro;
-import br.com.ufpb.POO.Propriedades.Ponto_de_Partida;
+import br.com.ufpb.POO.Propriedades.PontoDePartida;
 import br.com.ufpb.POO.Propriedades.PropriedadeComercializavel;
 import br.com.ufpb.POO.Propriedades.PropriedadeComercializavelImovel;
 
@@ -26,8 +26,8 @@ public class ListasTest {
 	 */
 	@Before
 	public void inciaObjetos() {
-		lista = new Listas();
-		tabuleiro = new Tabuleiro(lista);
+		lista = Listas.getInstance();
+		tabuleiro = Tabuleiro.getInstance();
 		jogador1 = new Jogador("Ismar", "Azul",lista.getTabuleiro().get(0),1500);
 		jogador1.setId(0);
 		jogador2 = new Jogador("Anderson", "Preto", lista.getTabuleiro().get(6), 1500);
@@ -76,24 +76,4 @@ public class ListasTest {
 		assertEquals(3,lista.getTabuleiro().get(0).getJogadoresNaCasa().size());
 		
 	}
-	
-	/* Testa o comportamento do método getJogadorId.
-	 * Adiciona 2 jogadores na lista da casa inicial.
-	 * Verifica se o id dos jogadores são diferentes, espera-se um valor true.
-	 * Verifica se id do jogador 1 é igual a zero.
-	 * Verifica se id do jogador 2 é igual a um.
-	 * Verifica se o id de cada jogador corresponde ao id dos jogadores da casa inicial.
-	 */
-	@Test
-	public void testGetJogadorId(){
-		lista.addJogador(jogador1);
-		lista.addJogador(jogador2);
-		lista.addListaDeJogadoresNaCasaDePartida();
-		assertTrue(jogador1.getId()!=jogador2.getId());
-		assertTrue(jogador1.getId()==0);
-		assertTrue(jogador2.getId()==1);
-		assertEquals(jogador1,lista.getJogadorId(0));
-		assertEquals(jogador2,lista.getJogadorId(1));
-	}
-	
 }

@@ -7,7 +7,7 @@ package br.com.ufpb.POO;
 import java.util.ArrayList;
 
 import br.com.ufpb.POO.Propriedades.CasaDoTabuleiro;
-import br.com.ufpb.POO.Propriedades.PontoDePartida;;
+import br.com.ufpb.POO.Propriedades.PontoDePartida;
 import br.com.ufpb.POO.Propriedades.PropriedadeComercializavelEmpresa;
 import br.com.ufpb.POO.Propriedades.PropriedadeComercializavelImovel;
 import br.com.ufpb.POO.Propriedades.PropriedadeEspecialImpostoDeRenda;

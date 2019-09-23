@@ -19,8 +19,8 @@ public class CasaDoTabuleiroTest {
 	/* Inicia os objetos do tipo Listas, Tabuleiro e Jogador.*/
 	@Before
 	public void  iniciaObjetos() {
-		lista = new Listas();
-		tabuleiro = new Tabuleiro(lista);
+		lista = Listas.getInstance();
+		tabuleiro = Tabuleiro.getInstance();
 		jogador1 = new Jogador("Ismar", "Azul",lista.getTabuleiro().get(0),1500);		
 	}
 	
